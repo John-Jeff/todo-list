@@ -1,0 +1,13 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+}
+
+#projects {
+    background: #ffe1e1;
+}
+
+main {
+    background: #e1fffd;
+}
