@@ -5,17 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/style.css">
-    <script src="bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../src/style.css"> -->
+    <script src="bundle.js" defer></script>
     <title>Todo List</title>
 </head>
 
 <body>
-    <aside id="projects">
+    <aside id="project-pane">
+        <h1 id="title">Todo List</h1>
+        <div id="projects">
+            <div id="new-project">
+                <button id="new-project-button">New Project</button>
+                <div class="new-project-form hidden">
+                    <input type="text" placeholder="project name">
+                    <button id="create-project">create</button>
+                    <button id="cancel-project">cancel</button>
+                </div>
+            </div>
 
+        </div>
     </aside>
     <main>
-        
+
     </main>
 </body>
 
