@@ -17,14 +17,23 @@
         <h1 id="title">Todo List</h1>
         <div id="projects">
             <div id="new-project">
-                <button id="new-project-button">New Project</button>
+                <button id="new-project-button">&#x2b; New Project</button>
                 <div class="new-project-form hidden">
-                    <input type="text" placeholder="project name">
+                    <input id="new-project-input" type="text" placeholder="project name" required>
                     <button id="create-project">create</button>
                     <button id="cancel-project">cancel</button>
                 </div>
             </div>
-
+            <div id="project-list">
+                <div class="project">
+                    Project One
+                    <button class="delete-project">&#x2715;</button>
+                </div>
+                <div class="project">
+                    Project Two
+                    <button class="delete-project">&#x2715;</button>
+                </div>
+            </div>
         </div>
     </aside>
     <main>
