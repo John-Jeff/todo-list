@@ -15,17 +15,15 @@ body {
 
 #project-pane,
 main {
+    background: linear-gradient(225deg, #ffc8dd, #bde0fe );
+    background-attachment: fixed;
     border-radius: 1rem;
     overflow: hidden;
 }
 
-#project-pane {
-    background: #ffe1e1;
-}
-
-main {
-    background: #e1f5ff;
-}
+/* #project-pane {
+    background: linear-gradient(45deg, #cdb4db,#ffc8dd)
+} */
 
 /* ---Aside Section--- */
 
@@ -145,3 +143,65 @@ main {
 /* .project:hover + .delete-project {
     display: inline;
 } */
+
+/* ---Main Section--- */
+main {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.main-project-title {
+    background: var(--glass);
+    display: inline;
+    text-align: center;
+    margin: 0;
+    padding: .5em 1em;
+    border-radius: 1em;
+}
+
+.todo-list {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    padding: 0;
+}
+
+.todo {
+    background: var(--glass);
+    display: grid;
+    grid-template-columns: 20px 6fr 1fr;
+    gap: 0 1rem;
+    list-style: none;
+    padding: 1rem 2rem 1rem 1rem;
+    border-radius: 1rem;
+}
+
+.todo:hover {
+    background: var(--glass_hover);
+}
+
+.todo-status {
+    background: #87e4a6;
+    grid-row: 1 / 3;
+    border-radius: 1rem;
+}
+
+.todo-name {
+    margin: 0;
+    font-size: 20px;
+}
+
+.todo-date {
+    margin: 0;
+    text-align: end;
+}
+
+.todo-desc {
+    margin: .5rem 0 0 0;
+    grid-column: 2 / 4;
+}
