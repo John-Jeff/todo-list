@@ -187,9 +187,14 @@ main {
 }
 
 .todo-status {
-    background: #87e4a6;
     grid-row: 1 / 3;
+    border: 2px solid #0000000e;
     border-radius: 1rem;
+}
+
+.completed {
+    background: #87e4a6;
+    border: none;
 }
 
 .todo-name {
