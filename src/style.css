@@ -19,6 +19,7 @@ main {
     background-attachment: fixed;
     border-radius: 1rem;
     overflow: hidden;
+    box-shadow: 0 0 8px 1px #dbdbdb;
 }
 
 /* #project-pane {
@@ -34,7 +35,7 @@ main {
     font-size: 30px;
     font-weight: 500;
     margin: 0;
-    padding: .8em 0;
+    padding: .5em 0;
 }
 
 #projects {
