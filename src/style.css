@@ -15,7 +15,7 @@ body {
 
 #project-pane,
 main {
-    background: linear-gradient(225deg, #ffc8dd, #bde0fe );
+    background: linear-gradient(225deg, #ffc8dd, #a2d2ff );
     background-attachment: fixed;
     border-radius: 1rem;
     overflow: hidden;
