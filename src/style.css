@@ -13,6 +13,10 @@ body {
     height: 100vh;
 }
 
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
 #project-pane,
 main {
     background: linear-gradient(225deg, #ffc8dd, #a2d2ff );
@@ -154,6 +158,13 @@ main {
     padding: 2rem;
 }
 
+.project-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .main-project-title {
     background: var(--glass);
     display: inline;
@@ -161,6 +172,20 @@ main {
     margin: 0;
     padding: .5em 1em;
     border-radius: 1em;
+}
+
+.add-todo {
+    background: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+.add-todo:hover {
+    background: var(--glass);
+    cursor: pointer;
 }
 
 .todo-list {
