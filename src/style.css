@@ -1,5 +1,6 @@
 :root {
     --glass: #ffffff50;
+    --glass_hover: #ffffff77;
 }
 
 body {
@@ -114,16 +115,33 @@ main {
 }
 
 .project {
+    display: flex;
+    justify-content: space-between;
     box-sizing: border-box;
     background: var(--glass);
     width: 100%;
     text-align: center;
     padding: .5rem;
     border-radius: 1rem;
+    cursor: pointer;
+}
+
+.project-title {
+    margin: 0 1rem;
+    overflow: hidden;
 }
 
 .delete-project {
+    padding: 0 1rem;
     background: none;
     border: none;
     cursor: pointer;
 }
+
+.project:hover {
+    background: var(--glass_hover);
+}
+
+/* .project:hover + .delete-project {
+    display: inline;
+} */

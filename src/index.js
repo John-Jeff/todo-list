@@ -1,12 +1,9 @@
 require('./style.css');
-import { toggleNewProjectButton, appendNewProject } from './new-project';
+import { toggleNewProjectButton, appendNewProject, deleteProject } from './new-project';
 // import { createTodo } from './todo';
 
 console.log('valid');
 
-const projectList = [];
-
-
-
 toggleNewProjectButton();
 appendNewProject();
+deleteProject();
