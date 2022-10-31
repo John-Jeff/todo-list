@@ -57,7 +57,7 @@ export function appendNewProject() {
             for (let project in projectList) {
                 projectListDOM.append(createNewProject(project));
             };
-            
+
             // Clear input field on new project input
             newProjectInput.value = '';
             console.log(projectList);
@@ -67,15 +67,20 @@ export function appendNewProject() {
 
 export function deleteProject() {
     const projectListDOM = document.querySelector('#project-list');
-    const project = document.querySelectorAll('.project');
-    const deleteButton = document.querySelectorAll('.delete-project');
+    // const project = document.querySelectorAll('.project');
+    // const deleteButton = document.querySelectorAll('.delete-project');
 
-    deleteButton.forEach(button => {
-        button.addEventListener('click', (e) => {
-            projectListDOM.remove(button.parentElement);
-            // console.log(button.parentElement);
-
-        });
+    projectListDOM.addEventListener('click', (e) => {
+        if (e.target != this) {
+            if (e.target.classList.contains('delete-project')) {
+                let valid = confirm('Are you sure you want to delete?');
+                if (valid) {
+                    projectListDOM.removeChild(e.target.parentElement);
+                    delete projectList[e.target.previousElementSibling.textContent];
+                    // console.log(e.target.parentElement);
+                };
+            };
+        };
     });
 
     // for (let i = 0; i < deleteButton.length; i++) {
