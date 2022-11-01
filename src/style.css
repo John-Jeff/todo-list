@@ -1,6 +1,11 @@
 :root {
-    --glass: #ffffff50;
-    --glass_hover: #ffffff77;
+    /* --glass: #ffffff50; */
+    --glass: #ffffff86;
+    /* --glass_hover: #ffffff77; */
+    --glass_hover: #ffffffa1;
+    --green: #87e4a6;
+    --yellow: #ffc966;
+    --red: #e48787;
 }
 
 body {
@@ -102,11 +107,11 @@ main {
 }
 
 #create-project {
-    background: #87e4a6;
+    background: var(--green);
 }
 
 #cancel-project {
-    background: #e48787;
+    background: var(--red);
 }
 
 /* Project List */
@@ -218,7 +223,7 @@ main {
 }
 
 .completed {
-    background: #87e4a6;
+    background: var(--green);
     border: none;
 }
 
