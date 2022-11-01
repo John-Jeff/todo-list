@@ -41,6 +41,26 @@
             <h2 class="main-project-title">Project One</h2>
             <button class="add-todo">&#x2b; add todo</button>
         </header>
+        <form class="todo-form" action="">
+            <div class="name-form">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="date-form">
+                <label for="date">Due Date</label>
+                <input type="date" name="dueDate" id="date">
+            </div>
+            <div class="prio-form-form">
+                <label for="priority">Priority</label>
+                <input type="range" max="2" id="priority">
+                <div class="range-value">medium</div>
+            </div>
+            <div class="desc-form">
+                <label for="desc">Description</label>
+                <input type="text" name="description" id="desc">
+            </div>
+            <button class="todo-form-submit">Add</button>
+        </form>
         <ul class="todo-list">
             <li class="todo">
                 <div class="todo-status completed"></div>

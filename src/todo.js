@@ -27,3 +27,18 @@ export function toggleStatus() {
         });
     });
 };
+
+export function displayPriorityRange() {
+    const levels = {
+        0: 'low',
+        1: 'medium',
+        2: 'high',
+    };
+    const range = document.querySelector('#priority');
+    const rangeValue = document.querySelector('.range-value');
+
+    range.addEventListener('input', (e) => {
+        console.log(range.value);
+        rangeValue.textContent = levels[range.value];
+    });
+};

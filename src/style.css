@@ -197,6 +197,61 @@ main {
     cursor: pointer;
 }
 
+.todo-form {
+    background: var(--glass);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: .5rem 2rem;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.todo-form label {
+    font-weight: 500;
+}
+
+#name {
+    width: 100%;
+    min-width: 150px;
+}
+
+#desc {
+    width: 100%;
+    min-width: 300px;
+}
+
+#priority {
+    padding: 0;
+}
+
+.desc-form {
+    grid-column: 1 / 4;
+}
+
+.todo-form input {
+    box-sizing: border-box;
+    display: block;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+}
+
+.todo-form-submit {
+    background: var(--green);
+    color: white;
+    justify-self: center;
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    width: 100px;
+    grid-column: 1 / 4;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
 .todo-list {
     box-sizing: border-box;
     display: flex;
@@ -204,6 +259,7 @@ main {
     gap: .5rem;
     width: 100%;
     padding: 0;
+    margin: 0;
 }
 
 .todo {
