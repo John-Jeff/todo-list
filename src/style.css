@@ -98,6 +98,7 @@ main {
 #create-project,
 #cancel-project {
     color: white;
+    font-weight: 600;
     margin: 0 .5rem;
     padding: .5rem 1rem;
     border: none;
@@ -217,13 +218,28 @@ main {
     min-width: 150px;
 }
 
+#date {
+    width: 100%;
+}
+
 #desc {
     width: 100%;
     min-width: 300px;
 }
 
 #priority {
+    margin-top: .5rem;
     padding: 0;
+}
+
+.range-value {
+    background: var(--yellow);
+    color: white;
+    display: inline;
+    font-weight: 600;
+    margin-left: .5rem;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
 }
 
 .desc-form {
@@ -242,10 +258,11 @@ main {
 .todo-form-submit {
     background: var(--green);
     color: white;
+    font-weight: 600;
     justify-self: center;
     margin-top: 1rem;
     padding: .5rem 1rem;
-    width: 100px;
+    width: 200px;
     grid-column: 1 / 4;
     border-radius: 1rem;
     border: none;

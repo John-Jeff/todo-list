@@ -30,15 +30,25 @@ export function toggleStatus() {
 
 export function displayPriorityRange() {
     const levels = {
-        0: 'low',
-        1: 'medium',
-        2: 'high',
+        0: {
+            text: 'low',
+            color: 'var(--green)',
+        },
+        1: {
+            text: 'medium',
+            color: 'var(--yellow)',
+        },
+        2: {
+            text: 'high',
+            color: 'var(--red)',
+        },
     };
     const range = document.querySelector('#priority');
     const rangeValue = document.querySelector('.range-value');
 
     range.addEventListener('input', (e) => {
         console.log(range.value);
-        rangeValue.textContent = levels[range.value];
+        rangeValue.textContent = levels[range.value].text;
+        rangeValue.style.background = levels[range.value].color;
     });
 };
