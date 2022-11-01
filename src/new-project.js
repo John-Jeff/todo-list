@@ -7,17 +7,25 @@ export function toggleNewProjectButton() {
     const newProjectButton = document.querySelector('#new-project-button');
     const newProjectForm = document.querySelector('.new-project-form');
     const cancelButton = document.querySelector('#cancel-project');
+    const newProjectInput = document.querySelector('#new-project-input');
 
     newProject.addEventListener('click', (e) => {
         if (e.target === newProjectButton || e.target === cancelButton) {
             newProjectForm.classList.toggle('hidden');
+        };
+
+        if (!newProjectForm.classList.contains('hidden')) {
+            newProject.style.background = 'var(--glass)';
+            newProjectInput.focus();
+        } else {
+            newProject.style.background = 'none';
         };
     });
 };
 
 function addProject(name) {
     projectList[name] = {};
-}
+};
 
 function createNewProject(name) {
     const project = document.createElement('div');
