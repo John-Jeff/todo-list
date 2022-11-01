@@ -3,9 +3,10 @@
     --glass: #ffffff7c;
     /* --glass_hover: #ffffff77; */
     --glass_hover: #ffffffa1;
-    --green: #87e4a6;
-    --yellow: #ffc966;
     --red: #e48787;
+    --yellow: #ffc966;
+    --green: #87e4a6;
+    --blue: #87e4e4;
 }
 
 body {
@@ -213,6 +214,7 @@ main {
     list-style: none;
     padding: 1rem 2rem 1rem 1rem;
     border-radius: 1rem;
+    border-top: 8px solid var(--green);
 }
 
 .todo:hover {
@@ -226,7 +228,7 @@ main {
 }
 
 .completed {
-    background: var(--green);
+    background: var(--blue);
     border: none;
 }
 
