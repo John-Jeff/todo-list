@@ -81,11 +81,6 @@ main {
     transition: all 200ms;
 }
 
-.hidden {
-    display: none;
-    transition: all 200ms;
-}
-
 #new-project-input {
     display: block;
     padding: .5rem 1rem;
@@ -194,7 +189,7 @@ main {
 }
 
 .add-todo:hover {
-    background: var(--glass);
+    background: var(--glass) !important;
     cursor: pointer;
 }
 
@@ -276,7 +271,6 @@ main {
     gap: .5rem;
     width: 100%;
     padding: 0;
-    margin: 0;
 }
 
 .todo {
@@ -318,4 +312,9 @@ main {
 .todo-desc {
     margin: .5rem 0 0 0;
     grid-column: 2 / 4;
+}
+
+.hidden {
+    display: none;
+    transition: all 200ms;
 }

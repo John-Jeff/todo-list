@@ -1,6 +1,6 @@
 require('./style.css');
 import { toggleNewProjectButton, appendNewProject, selectProject, deleteProject } from './new-project';
-import { toggleStatus, displayPriorityRange } from './todo';
+import { toggleStatus, toggleNewTodoButton, displayPriorityRange } from './todo';
 
 console.log('valid');
 
@@ -9,5 +9,6 @@ appendNewProject();
 selectProject();
 deleteProject();
 
+toggleNewTodoButton();
 displayPriorityRange();
 toggleStatus();

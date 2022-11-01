@@ -28,6 +28,25 @@ export function toggleStatus() {
     });
 };
 
+export function toggleNewTodoButton() {
+    const addTodoButton = document.querySelector('.add-todo');
+    const nameInput = document.querySelector('#name');
+    const todoForm = document.querySelector('.todo-form');
+
+    addTodoButton.addEventListener('click', (e) => {
+        todoForm.classList.toggle('hidden');
+
+        if (!todoForm.classList.contains('hidden')) {
+            addTodoButton.textContent = 'cancel';
+            addTodoButton.style.background = 'var(--red)';
+            nameInput.focus();
+        } else {
+            addTodoButton.innerHTML = '&#x2b; add todo';
+            addTodoButton.style.background = 'none';
+        };
+    });
+};
+
 export function displayPriorityRange() {
     const levels = {
         0: {
