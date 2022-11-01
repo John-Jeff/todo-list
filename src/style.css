@@ -138,10 +138,15 @@ main {
 }
 
 .delete-project {
-    padding: 0 1rem;
+    padding: 0 .5rem;
     background: none;
     border: none;
+    border-radius: 1rem;
     cursor: pointer;
+}
+
+.delete-project:hover {
+    background: var(--red);
 }
 
 .project:hover {
