@@ -318,3 +318,15 @@ main {
     display: none;
     transition: all 200ms;
 }
+
+.priority-low {
+    border-top-color: var(--green);
+}
+
+.priority-med {
+    border-top-color: var(--yellow);
+}
+
+.priority-high {
+    border-top-color: var(--red);
+}
