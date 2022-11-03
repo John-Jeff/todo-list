@@ -1,16 +1,44 @@
+import format from "date-fns/format";
+
 class Todos {
-    constructor(name, description, dueDate, priority) {
-        this.name = name;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
+    constructor(obj) {
+        this.name = obj.name;
+        this.description = obj.description;
+        this.dueDate = obj.dueDate;
+        this.priority = obj.priority;
     };
 };
 
 const projects = {};
 
-export function createTodo(title, name, desc, dueDate, prio) {
-    projects[title] = new Todos(name, desc, dueDate, prio);
+// export function createTodo(title, name, desc, dueDate, prio) {
+//     projects[title] = new Todos(name, desc, dueDate, prio);
+// };
+
+export function createTodo() {
+    const todoValues = {};
+    const todoForm = document.querySelector('.todo-form');
+    const formSubmit = document.querySelector('.todo-form-submit');
+
+    formSubmit.addEventListener('click', (e) => {
+        e.preventDefault();
+        const formData = new FormData(todoForm);
+
+        for (const [key, value] of formData) {
+            if (value === '') {
+                alert('please fill out missing fields');
+                return;
+            };
+        };
+        for (let [key, value] of formData.entries()) {
+            if (key === 'dueDate') {
+                let [y, m, d] = value.split('-');
+                value = format(new Date(y, (m-1), d), 'PP');
+            };
+            todoValues[key] = value;
+        };
+        return new Todos(todoValues);
+    });
 };
 
 export function createTodoElement(name, dueDate, desc) {
@@ -38,11 +66,6 @@ export function createTodoElement(name, dueDate, desc) {
 
     return todo;
 }
-
-createTodo('Task One', 'Task One', 'This is the first task', '12/1/22', 3);
-createTodo('Task Two', 'Task Two', 'This is the second task', '12/3/22', 2);
-
-console.log(projects);
 
 export function toggleStatus() {
     const todos = document.querySelectorAll('.todo');

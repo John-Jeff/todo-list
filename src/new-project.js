@@ -108,4 +108,4 @@ export function deleteProject() {
     //         projectList.remove(deleteButton[i].parentElement);
     //     })
     // }
-}
+};
