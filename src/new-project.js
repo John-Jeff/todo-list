@@ -1,6 +1,7 @@
+import { projectList } from '.';
 import { createTodo } from './todo';
 
-const projectList = {};
+// const projectList = {};
 
 export function toggleNewProjectButton() {
     const newProject = document.querySelector('#new-project');

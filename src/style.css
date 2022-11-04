@@ -26,8 +26,9 @@ button {
 #project-pane,
 main {
     /* background: linear-gradient(225deg, #ffc8dd, #a2d2ff ); */
-    background: linear-gradient(225deg, #ffc8dd, #749eff );
+    /* background: linear-gradient(225deg, #ffc8dd, #749eff ); */
     /* background: linear-gradient(225deg, #2d00f7, #3a0ca3 ); */
+    background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
     background-attachment: fixed;
     border-radius: 1rem;
     overflow: hidden;

@@ -9,6 +9,21 @@ class Todos {
     };
 };
 
+const levels = {
+    0: {
+        text: 'low',
+        color: 'var(--green)',
+    },
+    1: {
+        text: 'medium',
+        color: 'var(--yellow)',
+    },
+    2: {
+        text: 'high',
+        color: 'var(--red)',
+    },
+};
+
 const projects = {};
 
 // export function createTodo(title, name, desc, dueDate, prio) {
@@ -38,28 +53,37 @@ export function createTodo() {
             todoValues[key] = value;
         };
         return new Todos(todoValues);
+        // console.log(new Todos(todoValues));
     });
 };
 
-export function createTodoElement(name, dueDate, desc) {
+
+
+export function createTodoElement(todos) {
     const todo = document.createElement('li');
     todo.classList.add('todo');
 
+    const div = document.createElement('div');
+    div.classList.add('todo-status');
+
     const h3 = document.createElement('h3');
-    h3.textContent = name;
+    h3.textContent = todos.name;
     h3.classList.add('todo-name');
 
-    const h4 = docuement.createElement('h4');
-    h4.textContent = dueDate;
+    const h4 = document.createElement('h4');
+    h4.textContent = todos.dueDate;
     h4.classList.add('todo-date');
 
     const p = document.createElement('p');
-    p.textContent = desc;
+    p.textContent = todos.description;
     p.classList.add('todo-desc');
+
+    todo.style.borderTopColor = levels[todos.priority].color;
 
     // const deleteButton = document.createElement('div');
     // deleteButton.classList.add('delete-todo');
 
+    todo.append(div)
     todo.append(h3);
     todo.append(h4);
     todo.append(p);
@@ -97,20 +121,7 @@ export function toggleNewTodoButton() {
 };
 
 export function displayPriorityRange() {
-    const levels = {
-        0: {
-            text: 'low',
-            color: 'var(--green)',
-        },
-        1: {
-            text: 'medium',
-            color: 'var(--yellow)',
-        },
-        2: {
-            text: 'high',
-            color: 'var(--red)',
-        },
-    };
+
     const range = document.querySelector('#priority');
     const rangeValue = document.querySelector('.range-value');
 
