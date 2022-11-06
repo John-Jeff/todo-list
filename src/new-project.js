@@ -28,7 +28,7 @@ function addProject(name) {
     projectList[name] = {};
 };
 
-function createNewProject(name) {
+export function createNewProject(name) {
     const project = document.createElement('div');
     project.classList.add('project');
 

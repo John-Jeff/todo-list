@@ -1,10 +1,18 @@
 import { projectList } from ".";
-import { createTodoElement, refreshTodoList, toggleStatus } from "./todo";
+import { createNewProject } from "./new-project";
+import { createTodoElement, refreshTodoList } from "./todo";
 
-export function displayProject(title, project) {
+export function displayProjectList(projList) {
+    const projectListDOM = document.querySelector('#project-list');
+
+    Object.keys(projList).forEach(projName => {
+        projectListDOM.append(createNewProject(projName));
+    });
+};
+
+export function displayProjectContent(title, project) {
     const projectTitle = document.querySelector('.main-project-title');
     projectTitle.textContent = title;
-
     const todoList = document.querySelector('.todo-list');
 
     Object.entries(project).forEach(obj => {
@@ -20,7 +28,8 @@ export function selectProject() {
             if (!e.target.classList.contains('delete-project')) {
                 console.log('meow');
                 refreshTodoList();
-                displayProject(e.target.children[0].innerText, projectList['Project One']);
+                displayProjectContent(e.target.children[0].innerText,
+                    projectList[e.target.children[0].innerText]);
             };
         };
     });
