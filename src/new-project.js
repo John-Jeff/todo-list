@@ -74,18 +74,6 @@ export function appendNewProject() {
     });
 };
 
-export function selectProject() {
-    const projectListDOM = document.querySelector('#project-list');
-
-    projectListDOM.addEventListener('click', (e) => {
-        if (e.target != this) {
-            if (!e.target.classList.contains('delete-project')) {
-                console.log('meow');
-            };
-        };
-    });
-};
-
 export function deleteProject() {
     const projectListDOM = document.querySelector('#project-list');
     // const project = document.querySelectorAll('.project');

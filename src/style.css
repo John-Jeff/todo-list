@@ -313,6 +313,13 @@ main {
     border: none;
 }
 
+.todo-status,
+.todo-name,
+.todo-date,
+.todo-desc {
+    pointer-events: none;
+}
+
 .todo-name {
     margin: 0;
     font-size: 20px;

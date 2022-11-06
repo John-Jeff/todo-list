@@ -48,7 +48,7 @@ export function createTodo() {
         for (let [key, value] of formData.entries()) {
             if (key === 'dueDate') {
                 let [y, m, d] = value.split('-');
-                value = format(new Date(y, (m-1), d), 'PP');
+                value = format(new Date(y, (m - 1), d), 'PP');
             };
             todoValues[key] = value;
         };
@@ -56,8 +56,6 @@ export function createTodo() {
         // console.log(new Todos(todoValues));
     });
 };
-
-
 
 export function createTodoElement(todos) {
     const todo = document.createElement('li');
@@ -89,15 +87,24 @@ export function createTodoElement(todos) {
     todo.append(p);
 
     return todo;
-}
+};
+
+export function refreshTodoList() {
+    const todoListDOM = document.querySelector('.todo-list');
+    while (todoListDOM.firstChild) {
+        todoListDOM.removeChild(todoListDOM.firstChild);
+    };
+};
+
 
 export function toggleStatus() {
-    const todos = document.querySelectorAll('.todo');
+    const todoList = document.querySelector('.todo-list');
+    // const todoArray = Array.from(todos);
 
-    todos.forEach(todo => {
-        todo.addEventListener('click', (e) => {
-            todo.children[0].classList.toggle('completed');
-        });
+    todoList.addEventListener('click', (e) => {
+        if (e.target.classList.contains('todo')) {
+            e.target.children[0].classList.toggle('completed');
+        };
     });
 };
 

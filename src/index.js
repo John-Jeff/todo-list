@@ -1,7 +1,7 @@
 require('./style.css');
-import { toggleNewProjectButton, appendNewProject, selectProject, deleteProject } from './new-project';
+import { toggleNewProjectButton, appendNewProject, deleteProject } from './new-project';
 import { toggleStatus, toggleNewTodoButton, displayPriorityRange, createTodo } from './todo';
-import { displayProject } from './projects';
+import { selectProject, displayProject } from './projects';
 
 console.log('valid');
 
@@ -18,25 +18,12 @@ export const projectList = {
 
 toggleNewProjectButton();
 appendNewProject();
-selectProject();
 deleteProject();
 
 toggleNewTodoButton();
 displayPriorityRange();
 createTodo();
 
-displayProject(projectList['Project One']);
+// displayProject(projectList['Project One']);
+selectProject();
 toggleStatus();
-
-
-
-// projectList = {
-//     'Project One': {
-//         Todos: {
-//             name: '',
-//             description: '',
-//             dueDate: '',
-//             priority: '',
-//         }
-//     },
-// }
