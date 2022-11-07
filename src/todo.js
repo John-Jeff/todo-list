@@ -91,15 +91,17 @@ export function createTodoElement(todos) {
     p.textContent = todos.description;
     p.classList.add('todo-desc');
 
-    todo.style.borderTopColor = levels[todos.priority].color;
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = '&#x2715;';
+    deleteButton.classList.add('delete-todo');
 
-    // const deleteButton = document.createElement('div');
-    // deleteButton.classList.add('delete-todo');
+    todo.style.borderTopColor = levels[todos.priority].color;
 
     todo.append(div)
     todo.append(h3);
     todo.append(h4);
     todo.append(p);
+    todo.append(deleteButton);
 
     return todo;
 };
@@ -149,5 +151,28 @@ export function displayPriorityRange() {
         console.log(range.value);
         rangeValue.textContent = levels[range.value].text;
         rangeValue.style.background = levels[range.value].color;
+    });
+};
+
+export function deleteTodo() {
+    const todoList = document.querySelector('.todo-list');
+    const projHeader = document.querySelector('.project-header');
+    const projName = projHeader.children[0].textContent;
+
+    todoList.addEventListener('click', (e) => {
+        if (e.target != this) {
+            if (e.target.classList.contains('delete-todo')) {
+                let valid = confirm('Are you sure you want to delete?');
+                if (valid) {
+                    // projectListDOM.removeChild(e.target.parentElement);
+                    delete projectList[projName][e.target.parentNode.children[1].textContent]
+                    // console.log(e.target.parentElement);
+                    refreshTodoList();
+                    Object.entries(projectList[projName]).forEach(obj => {
+                        todoList.append(createTodoElement(obj[1]));
+                    });
+                };
+            };
+        };
     });
 };

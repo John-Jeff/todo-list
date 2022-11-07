@@ -1,7 +1,7 @@
 require('./style.css');
 import { storageAvailable } from './test-local-storage';
 import { toggleNewProjectButton, appendNewProject, deleteProject } from './new-project';
-import { toggleStatus, toggleNewTodoButton, displayPriorityRange, createTodo } from './todo';
+import { toggleStatus, toggleNewTodoButton, displayPriorityRange, createTodo, deleteTodo } from './todo';
 import { selectProject, displayProjectList } from './projects';
 
 console.log('valid');
@@ -51,3 +51,5 @@ createTodo();
 
 selectProject();
 toggleStatus();
+
+deleteTodo();

@@ -141,7 +141,8 @@ main {
     overflow: hidden;
 }
 
-.delete-project {
+.delete-project,
+.delete-todo {
     padding: 0 .5rem;
     background: none;
     border: none;
@@ -150,7 +151,7 @@ main {
     transition: all 200ms;
 }
 
-.delete-project:hover {
+.delete-project:hover, .delete-todo:hover {
     background: var(--red);
 }
 
@@ -307,7 +308,7 @@ main {
 .todo {
     background: var(--glass);
     display: grid;
-    grid-template-columns: 20px 6fr 1fr;
+    grid-template-columns: 20px 8fr 1fr;
     gap: 0 1rem;
     list-style: none;
     padding: 1rem 2rem 1rem 1rem;
@@ -351,7 +352,12 @@ main {
 
 .todo-desc {
     margin: .5rem 0 0 0;
-    grid-column: 2 / 4;
+    grid-column: 2 / 3;
+}
+
+.delete-todo {
+    width: 50%;
+    justify-self: end;
 }
 
 .hidden {
