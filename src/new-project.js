@@ -1,7 +1,4 @@
 import { projectList } from '.';
-import { createTodo } from './todo';
-
-// const projectList = {};
 
 export function toggleNewProjectButton() {
     const newProject = document.querySelector('#new-project');
@@ -76,8 +73,6 @@ export function appendNewProject() {
 
 export function deleteProject() {
     const projectListDOM = document.querySelector('#project-list');
-    // const project = document.querySelectorAll('.project');
-    // const deleteButton = document.querySelectorAll('.delete-project');
 
     projectListDOM.addEventListener('click', (e) => {
         if (e.target != this) {
@@ -91,10 +86,4 @@ export function deleteProject() {
             };
         };
     });
-
-    // for (let i = 0; i < deleteButton.length; i++) {
-    //     deleteButton[i].addEventListener('click', (e) => {
-    //         projectList.remove(deleteButton[i].parentElement);
-    //     })
-    // }
 };

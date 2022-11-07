@@ -7,6 +7,7 @@ class Todos {
         this.description = obj.description;
         this.dueDate = obj.dueDate;
         this.priority = obj.priority;
+        // this.completed = '';
     };
 };
 
@@ -24,12 +25,6 @@ const levels = {
         color: 'var(--red)',
     },
 };
-
-const projects = {};
-
-// export function createTodo(title, name, desc, dueDate, prio) {
-//     projects[title] = new Todos(name, desc, dueDate, prio);
-// };
 
 export function createTodo() {
     const todoValues = {};
@@ -114,16 +109,10 @@ export function refreshTodoList() {
     while (todoListDOM.firstChild) {
         todoListDOM.removeChild(todoListDOM.firstChild);
     };
-
-    // for (let todo in projectList[projName]) {
-    //     todoListDOM.append(createTodoElement(todo));
-    // }
 };
-
 
 export function toggleStatus() {
     const todoList = document.querySelector('.todo-list');
-    // const todoArray = Array.from(todos);
 
     todoList.addEventListener('click', (e) => {
         if (e.target.classList.contains('todo')) {
