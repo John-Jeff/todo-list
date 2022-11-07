@@ -63,11 +63,18 @@ export function createTodo() {
 export function addProjectTodo(todoName, todo) {
     const projHeader = document.querySelector('.project-header');
     const projName = projHeader.children[0].textContent;
+    const todoList = document.querySelector('.todo-list');
 
     projectList[projName][todoName] = todo;
 
     console.log(projectList)
     console.log(projName)
+
+    refreshTodoList();
+
+    Object.entries(projectList[projName]).forEach(obj => {
+        todoList.append(createTodoElement(obj[1]));
+    });
 };
 
 export function createTodoElement(todos) {

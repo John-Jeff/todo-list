@@ -39,8 +39,6 @@ deleteProject();
 toggleNewTodoButton();
 displayPriorityRange();
 createTodo();
-// addProjectTodo();
 
-// displayProject(projectList['Project One']);
 selectProject();
 toggleStatus();
