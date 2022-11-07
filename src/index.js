@@ -1,9 +1,18 @@
 require('./style.css');
+import { storageAvailable } from './test-local-storage';
 import { toggleNewProjectButton, appendNewProject, deleteProject } from './new-project';
 import { toggleStatus, toggleNewTodoButton, displayPriorityRange, createTodo } from './todo';
 import { selectProject, displayProjectList } from './projects';
 
 console.log('valid');
+
+// Check is Local storage is available from Web Storage API
+if (storageAvailable('localStorage')) {
+    console.log('Local storage available');
+}
+else {
+    console.log('No.');
+}
 
 export const projectList = {
     // 'Project One': {
