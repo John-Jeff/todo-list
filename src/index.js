@@ -15,20 +15,20 @@ else {
 }
 
 export const projectList = {
-    // 'Project One': {
-    //     Uno: {
-    //         name: 'Uno',
-    //         description: 'meowmeowmeow',
-    //         dueDate: 'Dec 12, 2022',
-    //         priority: 1
-    //     },
-    //     Duo: {
-    //         name: 'Duo',
-    //         description: 'woofwoofwoof',
-    //         dueDate: 'Dec 20, 2022',
-    //         priority: 2
-    //     },
-    // },
+    'Project One': {
+        // Uno: {
+        //     name: 'Uno',
+        //     description: 'meowmeowmeow',
+        //     dueDate: 'Dec 12, 2022',
+        //     priority: 1
+        // },
+        // Duo: {
+        //     name: 'Duo',
+        //     description: 'woofwoofwoof',
+        //     dueDate: 'Dec 20, 2022',
+        //     priority: 2
+        // },
+    },
     // 'Project Two': {
     //     Game: {
     //         name: 'Game',
