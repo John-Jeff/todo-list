@@ -1,4 +1,5 @@
 import format from "date-fns/format";
+import { projectList } from ".";
 
 class Todos {
     constructor(obj) {
@@ -52,9 +53,21 @@ export function createTodo() {
             };
             todoValues[key] = value;
         };
-        return new Todos(todoValues);
-        // console.log(new Todos(todoValues));
+        // return new Todos(todoValues);
+        const newTodo = new Todos(todoValues);
+        addProjectTodo(newTodo.name, newTodo);
+        // todoListDOM.append(createTodoElement(newTodo));
     });
+};
+
+export function addProjectTodo(todoName, todo) {
+    const projHeader = document.querySelector('.project-header');
+    const projName = projHeader.children[0].textContent;
+
+    projectList[projName][todoName] = todo;
+
+    console.log(projectList)
+    console.log(projName)
 };
 
 export function createTodoElement(todos) {
@@ -94,6 +107,10 @@ export function refreshTodoList() {
     while (todoListDOM.firstChild) {
         todoListDOM.removeChild(todoListDOM.firstChild);
     };
+
+    // for (let todo in projectList[projName]) {
+    //     todoListDOM.append(createTodoElement(todo));
+    // }
 };
 
 
