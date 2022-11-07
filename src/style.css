@@ -277,12 +277,27 @@ main {
 
 .todo-list {
     box-sizing: border-box;
+    overflow: auto;
     display: flex;
     flex-direction: column;
     gap: .5rem;
     width: 100%;
     padding: 0;
     margin: 0;
+}
+
+.todo-list::-webkit-scrollbar {
+    width: .6em;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #0000004d;
+    border-radius: 1rem;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 1rem;
 }
 
 .todo {
