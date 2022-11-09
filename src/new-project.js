@@ -10,20 +10,20 @@ export function toggleNewProjectButton() {
     newProject.addEventListener('click', (e) => {
         if (e.target === newProjectButton || e.target === cancelButton) {
             newProjectForm.classList.toggle('hidden');
-        };
+        }
 
         if (!newProjectForm.classList.contains('hidden')) {
             newProject.style.background = 'var(--glass)';
             newProjectInput.focus();
         } else {
             newProject.style.background = 'none';
-        };
+        }
     });
-};
+}
 
 function addProject(name) {
     projectList[name] = {};
-};
+}
 
 export function createNewProject(name) {
     const project = document.createElement('div');
@@ -40,7 +40,7 @@ export function createNewProject(name) {
     project.append(deleteButton);
 
     return project;
-};
+}
 
 export function appendNewProject() {
     const newProjectInput = document.querySelector('#new-project-input');
@@ -55,35 +55,35 @@ export function appendNewProject() {
             // Remove elements on project list
             while (projectListDOM.firstChild) {
                 projectListDOM.removeChild(projectListDOM.firstChild);
-            };
+            }
 
             // Add new project to project list
             addProject(newProjectInput.value);
             // Appendelements back to project list with new project
             for (let project in projectList) {
                 projectListDOM.append(createNewProject(project));
-            };
+            }
 
             // Clear input field on new project input
             newProjectInput.value = '';
             console.log(projectList);
-        };
+        }
     });
-};
+}
 
 export function deleteProject() {
     const projectListDOM = document.querySelector('#project-list');
 
     projectListDOM.addEventListener('click', (e) => {
-        if (e.target != this) {
+        if (e.target !== this) {
             if (e.target.classList.contains('delete-project')) {
-                let valid = confirm('Are you sure you want to delete?');
+                const valid = confirm('Are you sure you want to delete?');
                 if (valid) {
                     projectListDOM.removeChild(e.target.parentElement);
                     delete projectList[e.target.previousElementSibling.textContent];
                     // console.log(e.target.parentElement);
-                };
-            };
-        };
+                }
+            }
+        }
     });
-};
+}
