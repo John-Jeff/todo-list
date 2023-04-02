@@ -1,0 +1,55 @@
+@import './base.css';
+
+/* #app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */
+
+:root {
+  --main-background: #2f3349;
+  --sub-background: #5f6479;
+  --completed: #30d683;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  /* background: var(--main-background); */
+  background-image: linear-gradient( 45deg, #292d41 20%, #393c5a 80% );
+  margin: 0;
+  padding: 1rem;
+  height: 100vh;
+}
+
+#app {
+  height: 100%;
+}
