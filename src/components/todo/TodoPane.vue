@@ -2,9 +2,9 @@
     <div id="main">
         <header id="main-header">
             <h1 id="project-title">{{ project.title }}</h1>
-            <a id="add-todo-btn">Add Todo</a>
+            <a id="add-todo-btn" @click="toggleForm()">{{$store.state.formActive ? 'Cancel' : 'Add Todo'}}</a>
         </header>
-        <TodoForm />
+        <TodoForm v-if="$store.state.formActive" />
         <ul id="todo-list">
             <li class="todo" @click="toggleCompleted(todo)" v-for="todo in project.todos" v-bind:key="todo.id">
                 <span class="status" :class="{ completed: todo.completed }"></span>
@@ -22,6 +22,11 @@ import TodoForm from './TodoForm.vue';
 
 export default {
     components: { TodoForm },
+    data() {
+        return {
+            formActive: false,
+        }
+    },
     computed: {
         project() {
             if (!this.$store.state.selectedProject) {
@@ -34,6 +39,9 @@ export default {
         }
     },
     methods: {
+        toggleForm() {
+            this.$store.commit('TOGGLE_FORM');
+        },
         toggleCompleted(todo) {
             this.$store.commit("TOGGLE_COMPLETED", todo);
         },
@@ -70,6 +78,7 @@ export default {
     font-size: 20px;
     padding: .4em 1em;
     border-radius: 1em;
+    cursor: pointer;
 }
 
 #todo-list {

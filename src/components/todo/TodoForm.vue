@@ -1,5 +1,5 @@
 <template>
-    <form class="todo-form hidden" @submit.prevent="">
+    <form id="todo-form" @submit.prevent="">
         <div class="title-form">
             <label for="title">Name</label>
             <input type="text" name="title" id="title" v-model="newTodo.title" required>
@@ -36,6 +36,7 @@ export default {
         addTodo() {
             if (this.newTodo.title && this.newTodo.description) {
                 this.$store.commit('ADD_TODO', this.newTodo);
+                this.$store.commit('TOGGLE_FORM');
                 this.newTodo = {
                     title: '',
                     description: '',
@@ -47,4 +48,15 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+#todo-form {
+    padding: 1rem;
+    border: 1px solid #5f6479;
+    border-radius: 1rem;
+}
+
+#title,
+#description {
+    display: block;
+}
+</style>
