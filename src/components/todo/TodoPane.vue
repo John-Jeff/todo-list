@@ -6,7 +6,7 @@
         </header>
         <ul id="todo-list">
             <li class="todo" @click="toggleCompleted(todo)" v-for="todo in project.todos" v-bind:key="todo.id">
-                <span class="status" :class="{completed: todo.completed}"></span>
+                <span class="status" :class="{ completed: todo.completed }"></span>
                 <h2 class="todo-title">{{ todo.title }}</h2>
                 <p class="todo-desc">{{ todo.description }}</p>
                 <a class="todo-edit"></a>
@@ -60,12 +60,12 @@ export default {
 
 #add-todo-btn {
     background: #c9547b;
-    color: #f3f3f3;;
+    color: #f3f3f3;
+    ;
     font-family: inherit;
     font-size: 20px;
     padding: .4em 1em;
     border-radius: 1em;
-
 }
 
 #todo-list {
