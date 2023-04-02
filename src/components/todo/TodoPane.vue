@@ -2,9 +2,9 @@
     <div id="main">
         <header id="main-header">
             <h1 id="project-title">{{ project.title }}</h1>
-            <a id="add-todo-btn" @click="toggleForm()">{{$store.state.formActive ? 'Cancel' : 'Add Todo'}}</a>
+            <a id="add-todo-btn" @click="toggleTodoForm()">{{$store.state.TodoFormActive ? 'Cancel' : 'Add Todo'}}</a>
         </header>
-        <TodoForm v-if="$store.state.formActive" />
+        <TodoForm v-if="$store.state.todoFormActive" />
         <ul id="todo-list">
             <li class="todo" @click="toggleCompleted(todo)" v-for="todo in project.todos" v-bind:key="todo.id">
                 <span class="status" :class="{ completed: todo.completed }"></span>
@@ -37,8 +37,8 @@ export default {
         }
     },
     methods: {
-        toggleForm() {
-            this.$store.commit('TOGGLE_FORM');
+        toggleTodoForm() {
+            this.$store.commit('TOGGLE_TODO_FORM');
         },
         toggleCompleted(todo) {
             this.$store.commit("TOGGLE_COMPLETED", todo);
@@ -86,7 +86,7 @@ export default {
 .todo {
     background: #5f6479;
     display: grid;
-    gap: 0 1rem;
+    gap: .5rem 1rem;
     grid-template-columns: min-content auto min-content;
     grid-template-areas:
         "status title edit"
@@ -116,7 +116,8 @@ export default {
 }
 
 .todo-desc {
-    margin-bottom: .5rem;
+    margin: 0;
+    align-self: center;
     grid-area: desc;
 }
 

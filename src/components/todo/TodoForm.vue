@@ -2,7 +2,7 @@
     <form id="todo-form" @submit.prevent="">
         <div class="title-form">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" v-model="newTodo.title" required>
+            <input type="text" name="title" id="title" v-model="newTodo.title" placeholder="Todo Title" required>
         </div>
         <!-- <div class="date-form">
             <label for="date">Due Date</label>
@@ -15,7 +15,7 @@
         </div> -->
         <div class="desc-form">
             <label for="description">Description</label>
-            <textarea type="text" name="description" id="description" v-model="newTodo.description" rows="3" cols="40"></textarea>
+            <textarea type="text" name="description" id="description" v-model="newTodo.description" rows="3" cols="40" placeholder="Cool Todo Description"></textarea>
         </div>
         <button class="todo-form-submit" @click="addTodo()">Add</button>
     </form>
@@ -36,7 +36,7 @@ export default {
         addTodo() {
             if (this.newTodo.title && this.newTodo.description) {
                 this.$store.commit('ADD_TODO', this.newTodo);
-                this.toggleForm();
+                this.toggleTodoForm();
                 this.newTodo = {
                     title: '',
                     description: '',
@@ -44,8 +44,8 @@ export default {
                 }
             }
         },
-        toggleForm() {
-            this.$store.commit('TOGGLE_FORM');
+        toggleTodoForm() {
+            this.$store.commit('TOGGLE_TODO_FORM');
         }
     }
 }
@@ -65,6 +65,12 @@ label {
 
 #title {
     width: 20rem;
+}
+
+#description {
+    font-family: inherit;
+    max-width: 600px;
+    max-height: 100px;
 }
 
 #title,
