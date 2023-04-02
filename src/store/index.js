@@ -64,6 +64,10 @@ export default createStore({
         ADD_TODO(state, newTodo) {
             const project = state.todoList.find(project => project.id == state.selectedProject);
             project.todos.push(newTodo);
+        },
+        DELETE_TODO(state, todoID) {
+            const project = state.todoList.find(project => project.id == state.selectedProject);
+            project.todos = project.todos.filter(todo => todo.id != todoID);
         }
     }
 })

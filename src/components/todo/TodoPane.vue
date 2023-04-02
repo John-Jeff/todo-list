@@ -10,7 +10,7 @@
                 <h2 class="todo-title">{{ todo.title }}</h2>
                 <p class="todo-desc">{{ todo.description }}</p>
                 <a class="todo-edit"></a>
-                <a class="todo-delete">X</a>
+                <a class="todo-delete" @click="deleteTodo(todo.id)">X</a>
             </li>
         </ul>
     </div>
@@ -27,6 +27,11 @@ export default {
                 }
             }
             return this.$store.getters.project;
+        }
+    },
+    methods: {
+        deleteTodo(todoID) {
+            this.$store.commit('DELETE_TODO', todoID);
         }
     }
 }
