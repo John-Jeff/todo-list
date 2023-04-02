@@ -65,6 +65,9 @@ export default createStore({
             const project = state.todoList.find(project => project.id == state.selectedProject);
             project.todos.push(newTodo);
         },
+        TOGGLE_COMPLETED(state, todo) {
+            todo.completed = !todo.completed;
+        },
         DELETE_TODO(state, todoID) {
             const project = state.todoList.find(project => project.id == state.selectedProject);
             project.todos = project.todos.filter(todo => todo.id != todoID);

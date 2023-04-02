@@ -5,8 +5,8 @@
             <a id="add-todo-btn">Add Todo</a>
         </header>
         <ul id="todo-list">
-            <li class="todo" v-for="todo in project.todos" v-bind:key="todo.id">
-                <span class="status"></span>
+            <li class="todo" @click="toggleCompleted(todo)" v-for="todo in project.todos" v-bind:key="todo.id">
+                <span class="status" :class="{completed: todo.completed}"></span>
                 <h2 class="todo-title">{{ todo.title }}</h2>
                 <p class="todo-desc">{{ todo.description }}</p>
                 <a class="todo-edit"></a>
@@ -30,6 +30,9 @@ export default {
         }
     },
     methods: {
+        toggleCompleted(todo) {
+            this.$store.commit('TOGGLE_COMPLETED', todo);
+        },
         deleteTodo(todoID) {
             this.$store.commit('DELETE_TODO', todoID);
         }
@@ -111,6 +114,7 @@ export default {
     aspect-ratio: 1 / 1;
     width: 28px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .todo-edit {
