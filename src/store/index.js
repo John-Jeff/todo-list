@@ -4,7 +4,8 @@ import { createStore } from "vuex";
 export default createStore({
     state: {
         selectedProject: 1,
-        formActive: false,
+        todoFormActive: false,
+        projectFormActive: false,
         todoList: [
             {
                 id: 1,
@@ -58,13 +59,16 @@ export default createStore({
     mutations: {
         SET_SELECTED_PROJECT(state, projectID) {
             state.selectedProject = projectID;
-            state.formActive = false;
+            state.todoFormActive = false;
         },
         ADD_PROJECT(state, newProject) {
             state.todoList.push(newProject);
         },
-        TOGGLE_FORM(state) {
-            state.formActive = !state.formActive;
+        TOGGLE_TODO_FORM(state) {
+            state.todoFormActive = !state.todoFormActive;
+        },
+        TOGGLE_PROJECT_FORM(state) {
+            state.projectFormActive = !state.projectFormActive;
         },
         ADD_TODO(state, newTodo) {
             const project = state.todoList.find(project => project.id == state.selectedProject);
