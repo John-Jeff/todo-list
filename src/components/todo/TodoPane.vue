@@ -71,7 +71,6 @@ export default {
 #add-todo-btn {
     background: #c9547b;
     color: #f3f3f3;
-    ;
     font-family: inherit;
     font-size: 20px;
     padding: .4em 1em;

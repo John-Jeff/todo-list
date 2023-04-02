@@ -14,4 +14,23 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+#new-project-form {
+    display: grid;
+    grid-template-areas:
+        "input input"
+        "create cancel";
+}
+
+#new-project-input {
+    grid-area: input;
+}
+
+#create-project {
+    grid-area: create;
+}
+
+#cancel-project {
+    grid-area: cancel;
+}
+</style>

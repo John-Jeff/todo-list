@@ -33,6 +33,13 @@ export default {
 
 #new-project-btn {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
+    background: #c9547b;
+    color: #f3f3f3;
+    font-family: inherit;
+    font-size: 16px;
+    padding: .4em 1em;
+    border-radius: 1em;
+    cursor: pointer;
 }
 </style>
