@@ -11,13 +11,13 @@ export default createStore({
                 title: 'Homework',
                 todos: [
                     {
-                        id: 1,
+                        id: 1001,
                         title: 'Math 370',
                         description: 'Finish questions 1 - 20',
                         completed: false
                     },
                     {
-                        id: 2,
+                        id: 1002,
                         title: 'EENG 300',
                         description: 'Study for exam, units 1 - 7',
                         completed: true
@@ -29,19 +29,19 @@ export default createStore({
                 title: 'Test 2',
                 todos: [
                     {
-                        id: 1,
+                        id: 2001,
                         title: 'Test 2 Todo 1',
                         description: 'This is test 2 todo 1',
                         completed: false
                     },
                     {
-                        id: 2,
+                        id: 2002,
                         title: 'Test 2 Todo 2',
                         description: 'This is test 2 todo 2',
                         completed: false
                     },
                     {
-                        id: 3,
+                        id: 2003,
                         title: 'Test 2 Todo 3',
                         description: 'This is test 2 todo 3',
                         completed: true
@@ -68,6 +68,11 @@ export default createStore({
         },
         ADD_TODO(state, newTodo) {
             const project = state.todoList.find(project => project.id == state.selectedProject);
+            if (project.todos.length == 0) {
+                newTodo.id = state.selectedProject * 1000 + 1;
+            } else {
+                newTodo.id = project.todos[project.todos.length - 1].id + 1;
+            }
             project.todos.push(newTodo);
         },
         TOGGLE_COMPLETED(state, todo) {

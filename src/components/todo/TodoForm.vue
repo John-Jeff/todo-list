@@ -15,7 +15,7 @@
         </div> -->
         <div class="desc-form">
             <label for="description">Description</label>
-            <input type="text" name="description" id="description" v-model="newTodo.description">
+            <textarea type="text" name="description" id="description" v-model="newTodo.description" rows="3" cols="40"></textarea>
         </div>
         <button class="todo-form-submit" @click="addTodo()">Add</button>
     </form>
@@ -36,13 +36,16 @@ export default {
         addTodo() {
             if (this.newTodo.title && this.newTodo.description) {
                 this.$store.commit('ADD_TODO', this.newTodo);
-                this.$store.commit('TOGGLE_FORM');
+                this.toggleForm();
                 this.newTodo = {
                     title: '',
                     description: '',
                     completed: false,
                 }
             }
+        },
+        toggleForm() {
+            this.$store.commit('TOGGLE_FORM');
         }
     }
 }
@@ -53,6 +56,10 @@ export default {
     padding: 1rem;
     border: 1px solid #5f6479;
     border-radius: 1rem;
+}
+
+label {
+    color: #f3f3f3;
 }
 
 #title,

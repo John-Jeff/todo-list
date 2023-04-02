@@ -23,9 +23,7 @@ import TodoForm from './TodoForm.vue';
 export default {
     components: { TodoForm },
     data() {
-        return {
-            formActive: false,
-        }
+        return {}
     },
     computed: {
         project() {
