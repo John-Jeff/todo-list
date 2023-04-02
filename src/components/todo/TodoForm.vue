@@ -1,7 +1,7 @@
 <template>
     <form id="todo-form" @submit.prevent="">
         <div class="title-form">
-            <label for="title">Name</label>
+            <label for="title">Title</label>
             <input type="text" name="title" id="title" v-model="newTodo.title" required>
         </div>
         <!-- <div class="date-form">
@@ -53,17 +53,46 @@ export default {
 
 <style scoped>
 #todo-form {
-    padding: 1rem;
+    padding: 1rem 2rem;
     border: 1px solid #5f6479;
     border-radius: 1rem;
 }
 
 label {
     color: #f3f3f3;
+    font-size: 20px;
+}
+
+#title {
+    width: 20rem;
 }
 
 #title,
 #description {
     display: block;
+    background: #5f6479;
+    color: #f3f3f3;
+    font-size: 16px;
+    padding: .5em 1em;
+    margin: .4rem 0 1rem;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+}
+
+#title:focus,
+#description:focus,
+.todo-form-submit:focus {
+    outline: 1px solid #f3f3f3;
+}
+
+.todo-form-submit {
+    background: #30d683;
+    color: #f3f3f3;
+    font-size: 20px;
+    padding: .4em 1em;
+    border: none;
+    outline: none;
+    border-radius: 1em;
 }
 </style>
