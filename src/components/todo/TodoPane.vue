@@ -9,6 +9,8 @@
                 <span class="status"></span>
                 <h2 class="todo-title">{{ todo.title }}</h2>
                 <p class="todo-desc">{{ todo.description }}</p>
+                <a class="todo-edit"></a>
+                <a class="todo-delete">X</a>
             </li>
         </ul>
     </div>
@@ -66,10 +68,10 @@ export default {
     background: #5f6479;
     display: grid;
     gap: 0 1rem;
-    grid-template-columns: min-content auto;
+    grid-template-columns: min-content auto min-content;
     grid-template-areas:
-        "status title"
-        "status desc";
+        "status title edit"
+        "status desc delete";
     list-style: none;
     margin-bottom: 1rem;
     padding: 1em;
@@ -95,7 +97,29 @@ export default {
 }
 
 .todo-desc {
+    margin-bottom: .5rem;
     grid-area: desc;
+}
+
+.todo-edit,
+.todo-delete {
+    aspect-ratio: 1 / 1;
+    width: 28px;
+    border-radius: 50%;
+}
+
+.todo-edit {
+    background: #5487c9;
+    grid-area: edit;
+}
+
+.todo-delete {
+    background: #c95454;
+    color: #f3f3f3;
+    text-align: center;
+    line-height: 28px;
+    grid-area: delete;
+    align-self: flex-end;
 }
 
 .completed {
