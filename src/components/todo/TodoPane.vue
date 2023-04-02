@@ -10,7 +10,7 @@
                 <span class="status" :class="{ completed: todo.completed }"></span>
                 <h2 class="todo-title">{{ todo.title }}</h2>
                 <p class="todo-desc">{{ todo.description }}</p>
-                <a class="todo-edit"></a>
+                <a class="todo-edit" @click.stop="editTodo()">e</a>
                 <a class="todo-delete" @click="deleteTodo(todo.id)">X</a>
             </li>
         </ul>
@@ -42,6 +42,9 @@ export default {
         },
         toggleCompleted(todo) {
             this.$store.commit("TOGGLE_COMPLETED", todo);
+        },
+        editTodo() {
+            // create method logic
         },
         deleteTodo(todoID) {
             this.$store.commit("DELETE_TODO", todoID);
