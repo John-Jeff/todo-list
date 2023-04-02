@@ -39,6 +39,8 @@ export const projectList = {
     // },
 };
 
+// test
+
 displayProjectList(projectList);
 
 toggleNewProjectButton();
