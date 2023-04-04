@@ -23,7 +23,7 @@ export default {
 #main-view {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: minmax(250px, 1fr) 5fr;
   height: 100%;
 }
 

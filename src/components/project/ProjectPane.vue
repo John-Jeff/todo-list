@@ -2,7 +2,7 @@
     <div id="main">
         <h1 id="main-title">Cool Todo</h1>
         <button id="new-project-btn" @click="toggleProjectForm()">&#x2b; New Project</button>
-        <ProjectForm v-if="$store.state.projectFormActive"/>
+        <ProjectForm id="project-form" v-if="$store.state.projectFormActive"/>
         <ProjectList />
     </div>
 </template>
@@ -31,6 +31,10 @@ export default {
     margin-top: 0;
 }
 
+#project-form {
+    margin-bottom: 1rem;
+}
+
 #new-project-btn {
     display: block;
     margin: 0 auto 1rem;
@@ -39,6 +43,7 @@ export default {
     font-family: inherit;
     font-size: 16px;
     padding: .4em 1em;
+    border: none;
     border-radius: 1em;
     cursor: pointer;
 }
