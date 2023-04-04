@@ -2,16 +2,35 @@
     <div id="new-project">
         <form id="new-project-form" @submit.prevent="">
             <label id="input-label" for="new-project-input">Title</label>
-            <input id="new-project-input" type="text" name="title" placeholder="project title" required>
-            <button id="create-project">create</button>
-            <button id="cancel-project">cancel</button>
+            <input id="new-project-input" type="text" name="title" v-model="newProject.title" placeholder="project title"
+                required>
+            <button id="create-project" @click="addProject()">create</button>
+            <button id="cancel-project" @click="toggleProjectForm()">cancel</button>
         </form>
     </div>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            newProject: {
+                title: '',
+                todos: []
+            }
+        }
+    },
+    methods: {
+        toggleProjectForm() {
+            this.$store.commit('TOGGLE_PROJECT_FORM');
+        },
+        addProject() {
+            if (this.newProject.title) {
+                this.$store.commit('ADD_PROJECT', this.newProject);
+                this.toggleProjectForm();
+            }
+        }
+    }
 }
 </script>
 

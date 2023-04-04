@@ -62,6 +62,11 @@ export default createStore({
             state.todoFormActive = false;
         },
         ADD_PROJECT(state, newProject) {
+            if (state.todoList.length == 0) {
+                newProject.id = 1;
+            } else {
+                newProject.id = state.todoList[state.todoList.length - 1].id + 1;
+            }
             state.todoList.push(newProject);
         },
         TOGGLE_TODO_FORM(state) {
