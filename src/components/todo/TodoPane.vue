@@ -10,8 +10,8 @@
                 <span class="status" :class="{ completed: todo.completed }"></span>
                 <h2 class="todo-title">{{ todo.title }}</h2>
                 <p class="todo-desc">{{ todo.description }}</p>
-                <a class="todo-edit" @click.stop="editTodo()">e</a>
-                <a class="todo-delete" @click="deleteTodo(todo.id)">X</a>
+                <a class="todo-edit" @click.stop="editTodo()"><img src="../../assets/edit_icon.png" alt=""></a>
+                <a class="todo-delete" @click="deleteTodo(todo.id)"><img src="../../assets/delete_icon.png" alt=""></a>
             </li>
         </ul>
     </div>
@@ -126,20 +126,29 @@ export default {
     width: 28px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .todo-edit {
-    background: #5487c9;
     grid-area: edit;
 }
 
 .todo-delete {
     background: #c95454;
     color: #f3f3f3;
-    text-align: center;
     line-height: 28px;
     grid-area: delete;
     align-self: flex-end;
+}
+
+.todo-edit img {
+    width: 70%;
+}
+
+.todo-delete img {
+    width: 40%;
 }
 
 .completed {
