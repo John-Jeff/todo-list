@@ -1,6 +1,6 @@
 <template>
     <ul id="project-list">
-        <li class="project" v-for="project in $store.state.todoList" v-bind:key="project.projectid"
+        <li class="project" :class="{highlighted: highlightTodo(project)}" v-for="project in $store.state.todoList" v-bind:key="project.projectid"
             @click="selectTodo(project.id)">
             {{ project.title }}
         </li>
@@ -13,6 +13,9 @@ export default {
         selectTodo(id) {
             // console.log(this.$store.state.todoList[id - 1]);
             this.$store.commit('SET_SELECTED_PROJECT', id);
+        },
+        highlightTodo(project) {
+            return project.id === this.$store.state.selectedProject;
         }
     }
 }
@@ -35,5 +38,9 @@ export default {
     /* border: 1px solid #5f6479; */
     border-radius: 1em;
     cursor: pointer;
+}
+
+.highlighted {
+    border: 1px solid #f3f3f3;
 }
 </style>
