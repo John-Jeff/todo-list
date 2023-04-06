@@ -67,7 +67,6 @@ label {
 }
 
 #description {
-    font-family: inherit;
     max-width: 600px;
     max-height: 100px;
 }
@@ -77,6 +76,7 @@ label {
     display: block;
     background: #5f6479;
     color: #f3f3f3;
+    font-family: inherit;
     font-size: 16px;
     padding: .5em 1em;
     margin: .4rem 0 1rem;
@@ -91,9 +91,15 @@ label {
     outline: 1px solid #f3f3f3;
 }
 
+#title::placeholder,
+#description::placeholder {
+    color: #9799a2;
+}
+
 .todo-form-submit {
     background: #30d683;
     color: #f3f3f3;
+    font-family: inherit;
     font-size: 20px;
     padding: .4em 1em;
     border: none;

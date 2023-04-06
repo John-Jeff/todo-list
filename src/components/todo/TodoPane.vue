@@ -62,6 +62,7 @@ export default {
 
 #project-title {
     font-size: 26px;
+    font-weight: 500;
     box-sizing: border-box;
     display: inline-block;
     background: #5f6479;
@@ -108,11 +109,13 @@ export default {
 
 .todo-title {
     margin: 0;
+    font-weight: 500;
     grid-area: title;
 }
 
 .todo-desc {
     margin: 0;
+    font-weight: 300;
     align-self: center;
     grid-area: desc;
 }

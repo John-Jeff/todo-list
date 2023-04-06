@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 #main-title {
-    font-weight: lighter;
+    font-weight: 500;
     text-align: center;
     margin-top: 0;
 }

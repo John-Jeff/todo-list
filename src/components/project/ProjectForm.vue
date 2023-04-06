@@ -51,6 +51,7 @@ export default {
     display: block;
     background: #5f6479;
     color: #f3f3f3;
+    font-family: inherit;
     font-size: 14px;
     width: 100%;
     min-width: 0;
@@ -60,6 +61,10 @@ export default {
     border-radius: .5rem;
     justify-self: center;
     grid-area: input;
+}
+
+#new-project-input::placeholder {
+    color: #9799a2;
 }
 
 #input-label {
