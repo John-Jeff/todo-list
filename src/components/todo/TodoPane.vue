@@ -2,7 +2,7 @@
     <div id="main">
         <header id="main-header">
             <h1 id="project-title">{{ project.title }}</h1>
-            <a id="add-todo-btn" @click="toggleTodoForm()">{{$store.state.TodoFormActive ? 'Cancel' : 'Add Todo'}}</a>
+            <a id="add-todo-btn" @click="toggleTodoForm()">{{$store.state.todoFormActive ? 'Cancel' : 'Add Todo'}}</a>
         </header>
         <TodoForm v-if="$store.state.todoFormActive" />
         <ul id="todo-list">
