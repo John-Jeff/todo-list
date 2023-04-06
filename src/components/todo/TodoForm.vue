@@ -59,7 +59,6 @@ export default {
 }
 
 label {
-    color: #f3f3f3;
     font-size: 20px;
 }
 

@@ -63,7 +63,6 @@ export default {
 }
 
 #input-label {
-    color: #f3f3f3;
     justify-self: center;
     grid-area: label;
 }

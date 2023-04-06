@@ -65,7 +65,6 @@ export default {
     box-sizing: border-box;
     display: inline-block;
     background: #5f6479;
-    color: #f3f3f3;
     margin-top: 0;
     padding: .4em 1em;
     border-radius: 1em;
@@ -105,11 +104,6 @@ export default {
     border: 1px solid #9093a1;
     border-radius: 1rem;
     grid-area: status;
-}
-
-.todo-title,
-.todo-desc {
-    color: #f3f3f3;
 }
 
 .todo-title {

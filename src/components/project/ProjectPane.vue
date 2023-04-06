@@ -26,7 +26,6 @@ export default {
 <style scoped>
 #main-title {
     font-weight: lighter;
-    color: white;
     text-align: center;
     margin-top: 0;
 }

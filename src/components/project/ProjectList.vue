@@ -31,7 +31,6 @@ export default {
     box-sizing: border-box;
     text-align: center;
     background: #4b5168;
-    color: #f3f3f3;
     list-style: none;
     margin: .5rem 0;
     padding: .5em;
