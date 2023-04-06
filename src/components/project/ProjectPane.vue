@@ -1,8 +1,8 @@
 <template>
     <div id="main">
         <h1 id="main-title">Cool Todo</h1>
-        <button id="new-project-btn" @click="toggleProjectForm()">&#x2b; New Project</button>
         <ProjectForm id="project-form" v-if="$store.state.projectFormActive"/>
+        <button id="new-project-btn" v-else @click="toggleProjectForm()">&#x2b; New Project</button>
         <ProjectList />
     </div>
 </template>
