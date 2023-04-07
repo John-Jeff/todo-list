@@ -34,12 +34,12 @@ export default {
   padding: 1.5rem;
   border: 1px solid #5f6479;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 #project-pane {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 }
 </style>
