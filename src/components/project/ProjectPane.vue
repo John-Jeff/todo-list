@@ -3,7 +3,7 @@
         <h1 id="main-title">Cool Todo</h1>
         <ProjectForm id="project-form" v-if="$store.state.projectFormActive"/>
         <button id="new-project-btn" v-else @click="toggleProjectForm()">&#x2b; New Project</button>
-        <ProjectList />
+        <ProjectList id="project-list"/>
     </div>
 </template>
 
@@ -45,5 +45,9 @@ export default {
     border: none;
     border-radius: 1em;
     cursor: pointer;
+}
+
+#project-list {
+    overflow-y: auto;
 }
 </style>
