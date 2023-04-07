@@ -33,6 +33,7 @@ export default {
 }
 
 .project {
+    position: relative;
     box-sizing: border-box;
     text-align: center;
     background: #4b5168;
@@ -42,6 +43,15 @@ export default {
     /* border: 1px solid #5f6479; */
     border-radius: 1em;
     cursor: pointer;
+}
+
+.project img {
+    width: 12px;
+    position: absolute;
+    right: 0;
+    padding: 6px;
+    margin-right: .5rem;
+    border-radius: 50%;
 }
 
 .highlighted {
