@@ -69,6 +69,7 @@ export default createStore({
             }
             state.todoList.push(newProject);
             state.selectedProject = newProject.id;
+            state.todoFormActive = false;
         },
         TOGGLE_TODO_FORM(state) {
             state.todoFormActive = !state.todoFormActive;
