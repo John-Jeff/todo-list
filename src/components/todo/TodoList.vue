@@ -14,7 +14,7 @@
 export default {
     computed: {
         project() {
-            if (!this.$store.state.selectedProject) {
+            if (!this.$store.state.selectedProject || this.$store.state.todoList.length === 0) {
                 return {
                     title: "Select A Project To Load",
                     todos: []
@@ -101,7 +101,7 @@ export default {
 }
 
 .todo-delete img {
-    width: 40%;
+    width: 50%;
 }
 
 .completed {

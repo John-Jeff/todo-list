@@ -2,7 +2,7 @@
     <div id="main">
         <header id="main-header">
             <h1 id="project-title">{{ project.title }}</h1>
-            <a id="add-todo-btn" @click="toggleTodoForm()">{{ $store.state.todoFormActive ? 'Cancel' : 'Add Todo' }}</a>
+            <a id="add-todo-btn" v-if="$store.state.selectedProject !== 0" @click="toggleTodoForm()">{{ $store.state.todoFormActive ? 'Cancel' : 'Add Todo' }}</a>
         </header>
         <TodoForm v-if="$store.state.todoFormActive" />
         <TodoList id="todo-list"/>
@@ -23,7 +23,7 @@ export default {
     },
     computed: {
         project() {
-            if (!this.$store.state.selectedProject) {
+            if (!this.$store.state.selectedProject || this.$store.state.todoList.length === 0) {
                 return {
                     title: "Select A Project To Load",
                     todos: []

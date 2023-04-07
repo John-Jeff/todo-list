@@ -1,8 +1,9 @@
 <template>
     <ul id="project-list">
-        <li class="project" :class="{highlighted: highlightTodo(project)}" v-for="project in $store.state.todoList" v-bind:key="project.projectid"
+        <li class="project" :class="{highlighted: highlightTodo(project)}" v-for="project in $store.state.todoList" v-bind:key="project.id"
             @click="selectTodo(project.id)">
             {{ project.title }}
+            <img src="../../assets/delete_icon.png" alt="" @click.stop="deleteProject(project.id)">
         </li>
     </ul>
 </template>
@@ -16,6 +17,10 @@ export default {
         },
         highlightTodo(project) {
             return project.id === this.$store.state.selectedProject;
+        },
+        deleteProject(id) {
+            this.$store.commit('DELETE_PROJECT', id);
+            // console.log("meow")
         }
     }
 }

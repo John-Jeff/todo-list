@@ -71,6 +71,16 @@ export default createStore({
             state.selectedProject = newProject.id;
             state.todoFormActive = false;
         },
+        DELETE_PROJECT(state, projectID) {
+            const newtodoList = [];
+            for (let i = 0; i < state.todoList.length; i++) {
+                if (state.todoList[i].id == projectID) continue;
+                newtodoList.push(state.todoList[i]);
+            }
+            state.todoList = newtodoList;
+
+            if (state.selectedProject == projectID) state.selectedProject = 0;
+        },
         TOGGLE_TODO_FORM(state) {
             state.todoFormActive = !state.todoFormActive;
         },
