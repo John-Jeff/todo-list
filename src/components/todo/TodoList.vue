@@ -50,6 +50,7 @@ export default {
     margin-bottom: 1rem;
     padding: 1em;
     border-radius: 1em;
+    animation: grow 200ms;
 }
 
 .status {
@@ -89,11 +90,15 @@ export default {
 }
 
 .todo-delete {
-    background: #c95454;
     color: #f3f3f3;
     line-height: 28px;
     grid-area: delete;
     align-self: flex-end;
+    transition: 200ms all;
+}
+
+.todo-delete:hover {
+    background-color: #c95454;
 }
 
 .todo-edit img {
@@ -106,5 +111,34 @@ export default {
 
 .completed {
     background: #30d683;
+    animation: pop 300ms;
+}
+
+.deleted {
+    animation: pop 300ms;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0);;
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 </style>

@@ -4,7 +4,7 @@
             <h1 id="project-title">{{ project.title }}</h1>
             <a id="add-todo-btn" v-if="$store.state.selectedProject !== 0" @click="toggleTodoForm()">{{ $store.state.todoFormActive ? 'Cancel' : 'Add Todo' }}</a>
         </header>
-        <TodoForm v-if="$store.state.todoFormActive" />
+        <TodoForm id="todo-form" v-if="$store.state.todoFormActive" />
         <TodoList id="todo-list"/>
     </div>
 </template>
@@ -66,10 +66,30 @@ export default {
     padding: .4em 1em;
     border-radius: 1em;
     cursor: pointer;
+    transition: 200ms all;
+}
+
+#add-todo-btn:hover {
+    transform: scale(1.05);
+}
+
+
+#todo-form {
+    animation: grow 200ms;
 }
 
 #todo-list {
     padding: 0;
     overflow-y: auto;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0);;
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 </style>

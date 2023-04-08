@@ -40,9 +40,11 @@ export default {
     list-style: none;
     margin: .5rem 0;
     padding: .5em;
+    border: 1px solid #4b5168;
     /* border: 1px solid #5f6479; */
     border-radius: 1em;
     cursor: pointer;
+    transition: 200ms all;
 }
 
 .project img {
@@ -52,6 +54,11 @@ export default {
     padding: 6px;
     margin-right: .5rem;
     border-radius: 50%;
+    transition: 200ms all;
+}
+
+.project img:hover {
+    background-color: #c95454;
 }
 
 .highlighted {

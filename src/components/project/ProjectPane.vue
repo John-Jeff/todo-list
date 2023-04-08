@@ -32,6 +32,7 @@ export default {
 
 #project-form {
     margin-bottom: 1rem;
+    animation: grow 200ms;
 }
 
 #new-project-btn {
@@ -45,9 +46,25 @@ export default {
     border: none;
     border-radius: 1em;
     cursor: pointer;
+    transition: 200ms all;
+    animation: grow 200ms;
+}
+
+#new-project-btn:hover {
+    transform: scale(1.05);
 }
 
 #project-list {
     overflow-y: auto;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0);;
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 </style>
