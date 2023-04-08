@@ -120,7 +120,7 @@ export default {
 
 @keyframes grow {
     from {
-        transform: scale(0);;
+        transform: scale(.5);;
     }
 
     to {

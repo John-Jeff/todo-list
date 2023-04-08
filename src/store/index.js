@@ -6,6 +6,7 @@ export default createStore({
         selectedProject: 1,
         todoFormActive: false,
         projectFormActive: false,
+        projectTitleEdit: false,
         todoList: [
             {
                 id: 1,
@@ -60,6 +61,7 @@ export default createStore({
         SET_SELECTED_PROJECT(state, projectID) {
             state.selectedProject = projectID;
             state.todoFormActive = false;
+            state.projectTitleEdit = false;
         },
         ADD_PROJECT(state, newProject) {
             if (state.todoList.length == 0) {
@@ -80,6 +82,16 @@ export default createStore({
             state.todoList = newtodoList;
 
             if (state.selectedProject == projectID) state.selectedProject = 0;
+        },
+        EDIT_PROJECT_TITLE(state, projectTitle) {
+            const project = state.todoList.find(project => project.id == state.selectedProject);
+            if (projectTitle) {
+                project.title = projectTitle;
+            }
+            state.projectTitleEdit = false;
+        },
+        TOGGLE_PROJECT_EDIT(state) {
+            state.projectTitleEdit = !state.projectTitleEdit;
         },
         TOGGLE_TODO_FORM(state) {
             state.todoFormActive = !state.todoFormActive;

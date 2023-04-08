@@ -1,11 +1,18 @@
 <template>
     <div id="main">
         <header id="main-header">
-            <h1 id="project-title">{{ project.title }}</h1>
-            <a id="add-todo-btn" v-if="$store.state.selectedProject !== 0" @click="toggleTodoForm()">{{ $store.state.todoFormActive ? 'Cancel' : 'Add Todo' }}</a>
+            <h1 id="project-title">
+                <input id="title-form" @change="editProjectTitle(projectTitle)" v-model="projectTitle"
+                    v-if="$store.state.projectTitleEdit" type="text">
+                <span v-else>{{ project.title }}</span>
+                <a class="title-edit" @click.stop="toggleProjectTitleEdit()"><img src="../../assets/edit_icon.png"
+                        alt=""></a>
+            </h1>
+            <a id="add-todo-btn" v-if="$store.state.selectedProject !== 0" @click="toggleTodoForm()">{{
+                $store.state.todoFormActive ? 'Cancel' : 'Add Todo' }}</a>
         </header>
         <TodoForm id="todo-form" v-if="$store.state.todoFormActive" />
-        <TodoList id="todo-list"/>
+        <TodoList id="todo-list" />
     </div>
 </template>
 
@@ -19,7 +26,9 @@ export default {
         TodoList
     },
     data() {
-        return {}
+        return {
+            projectTitle: ''
+        }
     },
     computed: {
         project() {
@@ -29,14 +38,22 @@ export default {
                     todos: []
                 };
             }
-            return this.$store.getters.project;
+            const returnedProject = this.$store.getters.project;
+            this.projectTitle = returnedProject.title;
+            return returnedProject;
         }
     },
     methods: {
         toggleTodoForm() {
             this.$store.commit('TOGGLE_TODO_FORM');
+        },
+        toggleProjectTitleEdit() {
+            this.$store.commit('TOGGLE_PROJECT_EDIT');
+        },
+        editProjectTitle(projectTitle) {
+            this.$store.commit('EDIT_PROJECT_TITLE', projectTitle);
         }
-    },
+    }
 }
 </script>
 
@@ -56,6 +73,11 @@ export default {
     margin-top: 0;
     padding: .4em 1em;
     border-radius: 1em;
+}
+
+.title-edit {
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
 #add-todo-btn {
@@ -85,7 +107,8 @@ export default {
 
 @keyframes grow {
     from {
-        transform: scale(0);;
+        transform: scale(.5);
+        ;
     }
 
     to {
