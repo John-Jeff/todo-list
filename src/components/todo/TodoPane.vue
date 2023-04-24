@@ -2,8 +2,8 @@
     <div id="main">
         <header id="main-header">
             <h1 id="project-title">
-                <input id="title-form" @change="editProjectTitle(projectTitle)" v-model="projectTitle"
-                    v-if="$store.state.projectTitleEdit" type="text">
+                <input id="title-input" @blur="editProjectTitle(projectTitle)" v-model="projectTitle" ref="titleInput"
+                    v-if="$store.state.projectTitleEdit" type="text" v-focus>
                 <span v-else>{{ project.title }}</span>
                 <a class="title-edit" @click.stop="toggleProjectTitleEdit()"><img src="../../assets/edit_icon.png"
                         alt=""></a>
@@ -49,9 +49,12 @@ export default {
         },
         toggleProjectTitleEdit() {
             this.$store.commit('TOGGLE_PROJECT_EDIT');
+            // if (this.$store.state.projectTitleEdit) this.$refs.titleInput[0].focus();
+
         },
         editProjectTitle(projectTitle) {
             this.$store.commit('EDIT_PROJECT_TITLE', projectTitle);
+            // this.$refs.titleInput[0].focus();
         }
     }
 }
@@ -65,14 +68,27 @@ export default {
 }
 
 #project-title {
+    display: flex;
+    align-items: center;
     font-size: 26px;
     font-weight: 500;
     box-sizing: border-box;
-    display: inline-block;
+    /* display: inline-block; */
     background: #5f6479;
     margin-top: 0;
     padding: .4em 1em;
     border-radius: 1em;
+}
+
+#title-input {
+    background: none;
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    padding: .5em 1em;
+    border: 1px solid white;
+    outline: none;
+    border-radius: .5rem;
 }
 
 .title-edit {
